@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<div id="carts"></div>
+<script>
+    // #HmvAfRQM
+    // - взяти https://dummyjson.com/docs/carts та вивести інформацію про всі корзини. Відобразити всі поля кожної корзини.
+
+    const cartsDiv = document.getElementById('carts');
+    fetch('https://dummyjson.com/carts')
+        .then(value => value.json())
+        .then(cartsObject => {
+            const {carts} = cartsObject;
+            console.log(carts);
+
+            for (const cart of carts) {
+                const div = document.createElement('div');
+                div.classList.add('cart-container');
+                const divWithInfo = document.createElement('div');
+                divWithInfo.innerText = `
+                    "total": ${cart.total},
+                    "discountedTotal": ${cart.discountedTotal},
+                    "userId": ${cart.userId},
+                    "totalProducts": ${cart.totalProducts},
+                    "totalQuantity": ${cart.totalQuantity}
+                `
+
+                const ol = document.createElement('ol');
+                for (const product of cart.products) {
+                    const li = document.createElement('li');
+                    const info = document.createElement('p');
+                    info.innerText = `
+                      "id": ${product.id},
+                      "title": ${product.title},
+                      "price": ${product.price},
+                      "quantity": ${product.quantity},
+                      "total": ${product.total},
+                      "discountPercentage": ${product.discountPercentage},
+                      "discountedTotal": ${product.discountedTotal},
+                    `
+
+                    const img = document.createElement('img');
+                    img.src = product.thumbnail;
+                    li.append(img, info);
+                    ol.appendChild(li);
+
+                }
+
+                div.append(divWithInfo, ol);
+                cartsDiv.appendChild(div);
+
+            }
+
+        });
+
+</script>
+</body>
+</html>

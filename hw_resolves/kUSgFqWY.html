@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<form name="tableGeneratorFrom">
+    <input type="number" name="lines">
+    <input type="number" name="cells">
+    <input type="text" name="data">
+    <button>generate</button>
+</form>
+<table id="table">
+
+</table>
+<script>
+    //kUSgFqWY
+    // Створити 3 інпута та кнопку. Один визначає кількість рядків, другий - кількість ячеєк, третій вмиіст ячеєк.
+    //     При натисканні кнопки, вся ця інформація зчитується і формується табличка, з відповідним вмістом.
+
+    const table = document.getElementById('table');
+
+    const tableGeneratorFrom = document.forms['tableGeneratorFrom'];
+
+    tableGeneratorFrom.onsubmit = function (e) {
+        table.innerText = '';
+        e.preventDefault();
+        const linesValue = +tableGeneratorFrom.lines.value;
+        const cellsValue = +tableGeneratorFrom.cells.value;
+        const dataValue = tableGeneratorFrom.data.value;
+        console.log(linesValue, cellsValue, dataValue);
+
+        for (let i = 0; i < linesValue; i++) {
+            const tr = document.createElement('tr');
+            for (let j = 0; j < cellsValue; j++) {
+                const td = document.createElement('td');
+                td.innerText = dataValue;
+                tr.appendChild(td);
+            }
+
+            table.appendChild(tr);
+
+        }
+
+    };
+
+
+</script>
+
+</body>
+</html>

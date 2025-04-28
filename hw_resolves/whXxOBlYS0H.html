@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+
+        .target {
+            div {
+                background: silver;
+                margin-bottom: 10px;
+            }
+
+            img {
+                width: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="target"></div>
+<script>
+
+    // #whXxOBlYS0H
+    // - взяти https://dummyjson.com/docs/recipes та вивести інформацію про всі рецепти. Інгредієнти повинні бути список під час відображення.
+
+    const url = new URL('https://dummyjson.com/recipes');
+    url.searchParams.set('limit', '2');
+
+    const target = document.getElementsByClassName('target')[0];
+    fetch(url)
+        .then(value => value.json())
+        .then(recipesObject => {
+            const {recipes} = recipesObject;
+            for (const recipe of recipes) {
+                console.log(recipe);
+                const recipeDiv = document.createElement('div');
+                for (const recipeKey in recipe) {
+                    if (Array.isArray(recipe[recipeKey])) {
+                        const arrayAndTitleDiv = document.createElement('div');
+                        const title = document.createElement('div');
+                        title.innerText = `${recipeKey}:`;
+                        const ol = document.createElement('ol');
+                        const array = recipe[recipeKey];
+                        for (const item of array) {
+                            const li = document.createElement('li');
+                            li.innerText = item;
+                            ol.appendChild(li);
+                        }
+                        arrayAndTitleDiv.append(title, ol);
+                        recipeDiv.appendChild(arrayAndTitleDiv);
+                    } else {
+                        if (recipeKey !== 'image') {
+
+                            const keyDiv = document.createElement('div');
+                            keyDiv.innerText = `${recipeKey} : ${recipe[recipeKey]}`
+                            recipeDiv.appendChild(keyDiv);
+                        }
+                    }
+                }
+
+                const img = document.createElement('img');
+                img.src = recipe.image;
+                recipeDiv.appendChild(img);
+
+
+                target.appendChild(recipeDiv);
+            }
+
+
+        });
+
+
+</script>
+
+</body>
+</html>

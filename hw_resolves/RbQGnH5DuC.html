@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<!--#RbQGnH5DuC-->
+<!--В localStorage зберігаються масиви.
+Вам потрібно зробити функцію, які дістає потрібний вам масив з localStorage та додає в нього об'єкт-->
+<!--сигнатура функції - -->
+<!--addToLocalStorage(arrayName:string,objToAdd:any{}):void-->
+
+<script>
+    function addToLocalStorage(arrayName, objToAdd) {
+        const lsItem = localStorage.getItem(arrayName);
+        if (!lsItem) {
+            throw new Error('there is no such array');
+        }
+
+        const array = JSON.parse(lsItem);
+        if (typeof objToAdd === 'object') {
+            array.push(objToAdd);
+        }
+        localStorage.setItem(arrayName, JSON.stringify(array));
+
+    }
+
+    // localStorage.setItem('sessionsList', JSON.stringify([]));
+    // addToLocalStorage('sessionsList', {});
+</script>
+
+
+</body>
+</html>

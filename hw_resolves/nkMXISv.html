@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+    // #nkMXISv
+    // - створити класс для об'єктів Client з полями id, name, surname , email, phone, order (поле є масивом зі списком товарів)
+    // створити пустий масив, наповнити його 10 об'єктами Client
+
+
+    function Client(id, name, surname, email, phone, ...products) {
+        this.id = id;
+        this.name = name
+        this.surname = surname;
+        this.email = email;
+        this.phone = phone;
+        this.order = products;
+    }
+
+    function Product(title, price) {
+        this.title = title;
+        this.price = price;
+    }
+
+
+    const client = new Client(1,
+        'asd',
+        'qwe',
+        'asd@asd.com',
+        '+39764645',
+        new Product('tv', 13000),
+        new Product('phone', 125454)
+    );
+
+    let clients = [
+        new Client(1, 'asd', 'qwe', 'asd@asd.com', '+39764645', [{title: 'tv', price: 13000}, {title: 'phone', price: 987654}]),
+        new Client(1, 'asd', 'qwe', 'asd@asd.com', '+39764645', [{title: 'tv', price: 13000}, {title: 'phone', price: 987654}]),
+        new Client(1, 'asd', 'qwe', 'asd@asd.com', '+39764645', [{title: 'tv', price: 13000}, {title: 'phone', price: 987654}]),
+        new Client(1, 'asd', 'qwe', 'asd@asd.com', '+39764645', [{title: 'tv', price: 13000}, {title: 'phone', price: 987654}]),
+        new Client(1, 'asd', 'qwe', 'asd@asd.com', '+39764645', [{title: 'tv', price: 13000}, {title: 'phone', price: 987654}]),
+        new Client(1, 'asd', 'qwe', 'asd@asd.com', '+39764645', [{title: 'tv', price: 13000}, {title: 'phone', price: 987654}]),
+    ];
+
+    console.log(clients.order);
+
+</script>
+
+</body>
+</html>

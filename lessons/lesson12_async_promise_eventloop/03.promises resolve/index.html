@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    // setTimeout(() => {
+    //     let x = 1;
+    //     console.log(x);
+    //     setTimeout(() => {
+    //         x++;
+    //         console.log(x);
+    //         setTimeout(() => {
+    //             x++;
+    //             console.log(x);
+    //
+    //         }, 1000);
+    //
+    //     }, 1000);
+    //
+    // }, 1000);
+
+
+    new Promise((resolve) => {
+        setTimeout(() => {
+            let x = 1;
+            console.log(x);
+            resolve(x);
+        }, 1000);
+    })
+        .then((x) => {
+            return new Promise(resolve => {
+                setTimeout(() => {
+                    x++;
+                    console.log(x);
+                    resolve(x);
+                }, 1000)
+            });
+        })
+        .then(x => {
+            return new Promise(resolve => {
+                setTimeout(() => {
+                    x++;
+                    console.log(x);
+                    resolve(x);
+                }, 1000);
+            });
+        })
+        .then(x => {
+            new Promise(resolve => {
+                setTimeout(() => {
+                    x++;
+                    console.log(x);
+                }, 1000);
+            })
+        });
+
+
+
+ // fetch('https://jsonplaceholder.typicode.com/users/1')
+    //     .then(value => value.json())
+    //     .then(user => fetch('https://jsonplaceholder.typicode.com/posts?userId=' + user.id))
+    //     .then(response => response.json())
+    //     .then(value => console.log(value));
+    
+</script>
+
+</body>
+</html>

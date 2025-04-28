@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    // #AiN5CoUQ
+    // Створити функцію, яка робить глибоку копію об'єкту.
+    // Додати перевірки на undefined, null, NaN.
+    // Подумати і реалізувати логіку, в якій кінцевий об'єкт буде мати функції,які в нього були до цього моменту.
+    function cloner(obj) {
+        if (obj) {
+            let functions = [];
+            for (const key in obj) {
+                if (typeof obj[key] === 'function') {
+                    const functionClone = obj[key].bind({});
+                    functions.push({functionClone, key});
+                }
+            }
+            const cloneObj = JSON.parse(JSON.stringify(obj));
+            for (const func of functions) {
+                cloneObj[func.key] = func.functionClone;
+            }
+
+            console.log(cloneObj);
+            return cloneObj
+
+        }
+
+        throw new Error('!!!!!');
+
+    }
+
+    const clone = cloner({id: 123, name: 'asdsad', greeting() {console.log('hello')}, foo() {console.log('bar')}});
+    clone.foo();
+
+
+
+</script>
+
+</body>
+</html>

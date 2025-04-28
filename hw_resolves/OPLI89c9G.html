@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    // #OPLI89c9G
+    // - Є масив:
+    let arr = ['Main', 'Products', 'About us', 'Contacts']
+    // Зробити ul в середині якої будуть лежати елементи масиву (кожен в своєму li)
+
+    const menu = document.createElement('ul');
+    menu.classList.add('menu');
+
+    for (const item of arr) {
+        const li = document.createElement('li');
+        li.innerText = item;
+        menu.appendChild(li);
+    }
+
+    document.body.appendChild(menu);
+
+</script>
+
+</body>
+</html>

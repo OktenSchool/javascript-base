@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /*.wrap {*/
+        /*    display: flex;*/
+        /*    justify-content: space-between;*/
+        /*}*/
+
+        .target {
+            background: silver;
+            width: 300px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <div class="target">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur debitis, fugiat mollitia natus sint voluptatum. Aperiam cupiditate deserunt, dolores ea esse exercitationem ipsam iure labore officia quod sequi, unde voluptatibus!
+    </div>
+    <div class="target">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate eligendi excepturi laboriosam quia? Illum, laboriosam officia quasi rem soluta voluptate. A cumque illum incidunt magnam minima nobis pariatur sit veritatis.
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aspernatur, culpa cupiditate delectus dolore ducimus facilis fuga itaque laboriosam libero molestias nostrum omnis perferendis porro quidem similique sunt tempore veniam.
+    </div>
+    <div class="target">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus amet architecto aspernatur, cum dicta dignissimos dolores eaque eligendi eveniet expedita incidunt, inventore iure maxime qui rem, rerum vel veniam vero?
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum nemo, omnis. Error itaque iure mollitia nihil ratione. Asperiores exercitationem id laboriosam maiores non recusandae ullam. A ad eaque hic quibusdam.
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam autem consequuntur expedita iure magni? Atque eius nihil perspiciatis quia saepe sint? Aliquid ipsum officia, possimus quaerat quis ratione sequi tenetur?
+    </div>
+</div>
+<script>
+    // 6RuyJ7Gu
+    // створити три блоки з різним текстовим контентом. зробити так, щоб всі блоки мали висоту найбільшого з них.
+
+
+    const divs = document.getElementsByClassName('target');
+    let maxDiv = 0;
+    for (const div of divs) {
+        console.log(div.style.height);
+
+    }
+</script>
+
+
+</body>
+</html>

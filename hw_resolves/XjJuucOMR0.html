@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    // XjJuucOMR0
+    // - Створити функцію конструктор для об'єктів User з полями id, name, surname , email, phone
+    // створити пустий масив, наповнити його 10 об'єктами new User(....)
+
+    function User(id, name, surname, phone) {
+        this.id = id;
+        this.name = name;
+        this.surname = surname;
+        this.phone = phone;
+    }
+
+    const user = new User(1, 'kokos', 'asdqwe', '+964657983');
+    console.log(user);
+
+    let users = [
+        new User(1, 'kokos', 'asdqwe', '+964657983'),
+        new User(2, 'kokos', 'asdqwe', '+964657983'),
+        new User(3, 'kokos', 'asdqwe', '+964657983'),
+        new User(4, 'kokos', 'asdqwe', '+964657983'),
+        new User(5, 'kokos', 'asdqwe', '+964657983'),
+        new User(6, 'kokos', 'asdqwe', '+964657983'),
+        new User(7, 'kokos', 'asdqwe', '+964657983'),
+        new User(8, 'kokos', 'asdqwe', '+964657983'),
+        new User(9, 'kokos', 'asdqwe', '+964657983'),
+        new User(10, 'kokos', 'asdqwe', '+964657983'),
+        new User(321, 'asdasd', 'qweqwe', '+.65464654654')
+    ];
+    console.log(users);
+
+</script>
+</body>
+</html>

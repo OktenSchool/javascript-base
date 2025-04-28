@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<form name="someForm">
+    <input type="text" name="name">
+    <input type="text" name="surname">
+    <input type="number" name="age">
+    <!--    <input type="button" name="sendButton" value="send">-->
+    <button>send</button>
+</form>
+
+<div id="target"></div>
+<script>
+    // #ymAmN2xJ
+    // Стоврити форму з трьома полями для name,sruname,age та кнопкою. При натисканні на кнопку зчитати данні з полів, та вивести об'єкт в документ. Іншими словами : заповниои форму, натиснули кнопку, під формою з'явився блок з вашим об'єктом
+
+    const someForm = document.forms.someForm;
+
+    // const sendButton = someForm.sendButton;
+    // console.log(sendButton);
+    // sendButton.addEventListener('click', () => {
+    //     const nameValue = someForm.name.value;
+    //     const surnameValue = someForm.surname.value;
+    //     const ageValue = someForm.surname.age;
+    //     let obj = {nameValue,surnameValue,ageValue}
+    //     console.log(obj);
+    //
+    // });
+
+    // someForm.onsubmit = function () {};
+    const target = document.getElementById('target');
+
+    someForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const nameValue = someForm.name.value;
+        const surnameValue = someForm.surname.value;
+        const ageValue = +someForm.age.value;
+        let obj = {nameValue, surnameValue, ageValue}
+        console.log(obj);
+        target.innerText = obj.nameValue + ' ' + obj.surnameValue + ' ' + obj.ageValue;
+    });
+
+
+</script>
+
+</body>
+</html>

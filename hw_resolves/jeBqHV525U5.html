@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    //jeBqHV525U5
+    // - Є масив
+    let coursesAndDurationArray = [
+        {title: 'JavaScript Complex', monthDuration: 5},
+        {title: 'Java Complex', monthDuration: 6},
+        {title: 'Python Complex', monthDuration: 6},
+        {title: 'QA Complex', monthDuration: 4},
+        {title: 'FullStack', monthDuration: 7},
+        {title: 'Frontend', monthDuration: 4}
+    ];
+    // Для кожного елементу масиву зробити блок в якому вивести інформацію про title та monthDuration
+    // Завдання робити через цикли.
+    for (const course of coursesAndDurationArray) {
+        const div = document.createElement('div');
+        div.innerText = `${course.title} ${course.monthDuration}`
+        document.body.appendChild(div);
+    }
+
+
+</script>
+
+</body>
+</html>

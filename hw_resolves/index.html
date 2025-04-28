@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        .wrap {
+
+        }
+
+        .collpase {
+
+        }
+
+        .alpha {
+            width: 200px;
+            height: 200px;
+        }
+
+        .beta {
+            background: #000;
+
+        }
+    </style>
+</head>
+<body>
+<script>
+    // #8Nmt60ZT
+    // - створити блок,
+    //     - додати йому класи wrap, collapse, alpha, beta
+    // - додати стилі(довільні значення) : колір фону, колір тексту, розмір тексту
+    // - додати цей блок в body.
+    // - клонувати його повністю, та додати клон в body.
+
+
+    const div = document.createElement('div');
+    div.classList.add('wrap');
+    div.classList.add('collapse');
+    div.classList.add('alpha');
+    div.classList.add('beta');
+
+
+    const cloneNode = div.cloneNode(true);
+
+
+    document.body.append(div, cloneNode);
+
+</script>
+
+</body>
+</html>
