@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<form name="forma_1">
+    <input type="text" name="username">
+    <button>login...</button>
+</form>
+
+<video id="videoplayer"></video>
+<script>
+
+    const form_1 = document.forms["forma_1"];
+    console.log(form_1)
+    form_1.onsubmit = function (eventObject) {
+        eventObject.preventDefault();
+        console.log(form_1.username.value);
+
+    };
+
+    navigator.mediaDevices.getUserMedia({video: true})
+        .then(stream => {
+            let videoplayer = document.getElementById('videoplayer');
+            videoplayer.srcObject = stream;
+            videoplayer.play();
+        });
+
+
+</script>
+
+</body>
+</html>
